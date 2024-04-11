@@ -1,5 +1,5 @@
 <div class="container-fluid py-5 mb-5 hero-header position-relative" id="about">
-    <img class="position-absolute h-100" style="right:0;" src="{{asset('img/1657.png')}}">
+    <img class="position-absolute h-100 me-5" style="right:0; z-index: -1" src="{{asset('img/1657.png')}}">
     <div class="container py-5">
         <div class="row g-5 align-items-center">
             <div class="col-md-12 col-lg-7">

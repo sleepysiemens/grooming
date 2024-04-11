@@ -1,4 +1,5 @@
-<section id="products" class="py-5">
+<section class="py-5 position-relative">
+    <span class="position-absolute mb-5" id="products" style="bottom: 115%;"></span>
     <div class="container px-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-8 order-lg-1 mb-5 mb-lg-0">
@@ -10,7 +11,13 @@
                                     <div class="card-body">
                                         <div class="text-center">
                                             <h3 class="font-alt text-start">{{$product->title}}</h3>
-                                            <p class="text-muted text-start mb-0" style="min-height: 200px">{!! $product->description !!}</p>
+                                            <ul style="min-height: 200px">
+                                                @foreach($product->includes as $include)
+                                                    <li>
+                                                        <p class="text-muted text-start mb-0" >{{$include}}</p>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>

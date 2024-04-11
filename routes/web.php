@@ -6,7 +6,6 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('main.index');
 Route::post('/', [App\Http\Controllers\MainController::class, 'form_submit'])->name('main.form.submit');
-Route::post('/logout', [App\Http\Controllers\MainController::class, 'logout'])->name('logout.get');
 
 Route::group(['middleware' => ['auth', \App\Http\Middleware\AdminMiddleware::class]], function () {
     Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');

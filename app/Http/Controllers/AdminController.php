@@ -19,16 +19,15 @@ class AdminController extends Controller
 
     public function store_product(request $request)
     {
-        $data=$request->all();
-        unset($data['_token']);
-        unset($data['_method']);
-        Products::create($data);
+        $this->productService->store($request);
+
         return redirect()->route('admin.index');
     }
 
     public function delete_product(Products $product)
     {
         $product->delete();
+
         return redirect()->route('admin.index');
     }
 
@@ -39,10 +38,8 @@ class AdminController extends Controller
 
     public function update_product(Products $product, Request $request)
     {
-        $data=$request->all();
-        unset($data['_token']);
-        unset($data['_method']);
-        $product->update($data);
+        $this->productService->update($request, $product);
+
         return redirect()->route('admin.index');
     }
 }

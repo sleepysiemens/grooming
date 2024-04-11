@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Application;
-use App\Models\Products;
 use Illuminate\Http\Request;
 use function Laravel\Prompts\error;
 
@@ -11,24 +10,13 @@ class MainController extends Controller
 {
     public function index()
     {
-        $products=Products::all();
+        $products=$this->productService->get_products();
         return view('pages.main.index', compact(['products']));
     }
 
     public function form_submit(Request $request)
     {
-        //защита от ботов
-        if($request->email==null)
-        {
-            $data=$request->all();
-            unset($data['_token']);
-            unset($data['email']);
-            Application::create($data);
-
-            return redirect()->route('main.index')->with('success',1);
-        }
-
-        return redirect()->route('main.index')->with('fail',1);
+        $this->applicationService->store($request);
     }
 
     public function logout()
