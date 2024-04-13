@@ -27,7 +27,7 @@ class ProductController extends Controller
 
     public function delete_product(Products $product)
     {
-        $product->delete();
+        $this->productService->delete_product($product);
 
         return redirect()->route('admin.products.index');
     }

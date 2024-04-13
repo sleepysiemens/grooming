@@ -27,7 +27,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('admin.users.index')}}" class="nav-link @yield('users')">
                     <i class="fas fa-users"></i>
                     <p>
                         {{__('Пользователи')}}

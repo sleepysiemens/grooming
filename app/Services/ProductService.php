@@ -25,6 +25,7 @@ class ProductService
         {
             foreach ($data['include_title'] as $include)
             {
+                if($include!=null)
                 ProductInclude::create(['product_id'=>$product->id,'title'=>$include]);
             }
         }
@@ -61,5 +62,17 @@ class ProductService
             $product->includes=$includes;
         }
         return $products;
+    }
+
+    public function delete_product(Products $product)
+    {
+        foreach (ProductInclude::query()->where('product_id','=',$product->id)->get() as $include)
+        {
+            $include->delete();
+        }
+
+        $product->delete();
+
+        return true;
     }
 }

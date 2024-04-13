@@ -25,6 +25,8 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\AdminMiddleware::cla
         Route::get('/edit/{application}', [\App\Http\Controllers\Admin\ApplicationController::class, 'edit'])->name('admin.applications.edit');
         Route::patch('/update/{application}', [\App\Http\Controllers\Admin\ApplicationController::class, 'update'])->name('admin.applications.update');
     });
+
+    Route::get('/admin/users', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin.users.index');
 });
 
 //MASTER
