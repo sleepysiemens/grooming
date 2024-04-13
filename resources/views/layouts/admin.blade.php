@@ -13,7 +13,7 @@
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Theme style -->
-    @vite(['resources/css/adminlte.css', 'resources/js/adminlte.js', 'resources/js/pages/dashboard2.js'])
+    @vite(['resources/css/adminlte.css', 'resources/js/adminlte.js'])
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">

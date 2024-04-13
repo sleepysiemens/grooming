@@ -56,9 +56,7 @@
 @include('layouts.wrapper-blocks.footer')
 <!-- Footer End -->
 
-<!-- Copyright Start -->
-@include('layouts.wrapper-blocks.copytight')
-<!-- Copyright End -->
+
 
 
 
