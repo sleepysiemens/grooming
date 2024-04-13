@@ -1,4 +1,4 @@
-<div class="container-fluid py-5 mb-5 hero-header position-relative" id="about">
+<div class="container-fluid py-5 mb-5 hero-header position-relative" >
     <img class="position-absolute h-100 me-5" style="right:0; z-index: -1" src="{{asset('img/1657.png')}}">
     <div class="container py-5">
         <div class="row g-5 align-items-center">
