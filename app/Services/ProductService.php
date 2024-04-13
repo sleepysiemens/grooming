@@ -23,6 +23,11 @@ class ProductService
 
         if(isset($data['include_title']) and $data['include_title']!=null)
         {
+            foreach (ProductInclude::query()->where('product_id','=',$product->id)->get() as $include)
+            {
+                $include->delete();
+            }
+
             foreach ($data['include_title'] as $include)
             {
                 if($include!=null)

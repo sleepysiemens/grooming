@@ -8,20 +8,23 @@ use Livewire\Component;
 class ProductDescription extends Component
 {
     public $product;
+    public $product_includes;
 
     public function mount($product)
     {
         $this->product = $product;
+        $this->product_includes=ProductInclude::query()->where('product_id', $this->product->id)->get();
+
     }
 
     public function delete_include(ProductInclude $productInclude)
     {
         $productInclude->delete();
+        $this->product_includes=ProductInclude::query()->where('product_id', $this->product->id)->get();
     }
 
     public function render()
     {
-        $product_includes=ProductInclude::query()->where('product_id', $this->product->id)->get();
-        return view('livewire.product-description', compact(['product_includes']));
+        return view('livewire.product-description');
     }
 }

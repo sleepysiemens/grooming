@@ -1,5 +1,5 @@
-<div class="row bg-primary py-5 w-100 m-auto justify-content-center shadow" >
-    <span class="position-absolute mb-5" id="about" style="bottom: 100%;"></span>
+<div class="row bg-primary py-5 w-100 m-auto justify-content-center shadow position-relative" >
+    <span class="position-absolute mb-5" id="about" style="bottom: 120%;"></span>
 
     <div class="col-10">
         <h4>
