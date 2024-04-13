@@ -29,9 +29,12 @@
                             <tr>
                                 <td>{{$product->id}}</td>
                                 <td>{{$product->title}}</td>
-                                <td><p style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;"
-                                        {{$product->description}}
-                                    </p>
+                                <td>
+                                    <div style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+                                        @foreach($product->includes as $include)
+                                            <p class="mb-1"> {{$include}}</p>
+                                        @endforeach
+                                    </div>
                                 </td>
                                 <td>{{$product->price}}</td>
                                 <td><a class="m-auto" href="{{route('admin.products.edit',$product->id)}}"><i class="far fa-edit"></i></a></td>

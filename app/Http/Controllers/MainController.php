@@ -10,18 +10,15 @@ class MainController extends Controller
 {
     public function index()
     {
-        $products=$this->productService->get_products();
+        $products = $this->productService->get_products();
         return view('pages.main.index', compact(['products']));
     }
 
     public function form_submit(Request $request)
     {
-        $this->applicationService->store($request);
-    }
-
-    public function logout()
-    {
-        auth()->logout();
-        return redirect()->route('main.index');
+        if($this->applicationService->store($request))
+            return redirect()->route('main.index')->with('success',1);
+        else
+            return redirect()->route('main.index')->with('fail',1);
     }
 }

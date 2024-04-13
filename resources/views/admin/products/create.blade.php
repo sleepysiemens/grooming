@@ -3,7 +3,7 @@
 @section('content')
     <section class="content pt-5">
         <div class="row my-2 px-3">
-            <a href="{{route('admin.index')}}" class="col">{{__('Назад')}}</a>
+            <a href="{{route('admin.products.index')}}" class="col">{{__('Назад')}}</a>
 
         </div>
         <div class="container-fluid">
@@ -25,12 +25,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>{{__('Описание')}}</label>
-                                    <textarea class="form-control" placeholder="{{__('Название')}}" name="description" required></textarea>
-                                </div>
-
-                                <div class="form-group">
-                                    <label>{{__('Название')}}</label>
+                                    <label>{{__('Цена')}}</label>
                                     <input type="number" class="form-control" placeholder="{{__('Цена')}}" name="price" required>
                                 </div>
 

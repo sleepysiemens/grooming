@@ -1,14 +1,13 @@
 @extends('layouts.admin')
 
+@section('main') active @endsection
+
 @section('content')
-    <section class="content pt-5">
+    <section class="content pt-3">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <livewire:ProductsList/>
-                </div>
-                <div class="col-12">
-                <livewire:ApplicationsList/>
+                    <livewire:Timetable/>
                 </div>
             </div>
         </div>

@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Products;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class ProductController extends Controller
 {
     public function index()
     {
-        return view('admin.index');
+        return view('admin.products.index');
     }
 
     public function create_product()
@@ -21,14 +22,14 @@ class AdminController extends Controller
     {
         $this->productService->store($request);
 
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.products.index');
     }
 
     public function delete_product(Products $product)
     {
         $product->delete();
 
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.products.index');
     }
 
     public function edit_product(Products $product)
@@ -40,6 +41,6 @@ class AdminController extends Controller
     {
         $this->productService->update($request, $product);
 
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.products.index');
     }
 }

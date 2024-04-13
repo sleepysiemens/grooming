@@ -23,6 +23,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return redirect()->route('admin.index');
+        if(auth()->user()->is_admin)
+            return redirect()->route('admin.index');
+        elseif (auth()->user()->is_master)
+            return redirect()->route('master.index');
+        else
+            return redirect()->back();
     }
 }

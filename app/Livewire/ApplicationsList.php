@@ -10,15 +10,9 @@ class ApplicationsList extends Component
 {
     use WithPagination;
 
-    public function change_approval(Application $application)
-    {
-        $application->is_approved=!$application->is_approved;
-        $application->save();
-    }
-
     public function render()
     {
-        $applications=Application::paginate();
+        $applications=Application::query()->orderBy('created_at', 'desc')->paginate();
         return view('livewire.applications-list', compact(['applications']));
     }
 }

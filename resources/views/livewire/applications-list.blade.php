@@ -30,9 +30,9 @@
                                 <td>{{$application->phone}}</td>
                                 <td>{{$application->date_time}}</td>
                                 <td>
-                                    <button wire:click="change_approval({{$application->id}})" class="btn text-primary">
+                                    <a href="{{route('admin.applications.edit',$application->id)}}">
                                         @if($application->is_approved) <i class="fas fa-check"></i> @else <i class="fas fa-times"></i> @endif
-                                    </button>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
