@@ -35,9 +35,21 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="form-group col-6">
-                                        <label>{{__('Дата посещения')}}</label>
-                                        <input type="datetime-local" class="form-control" placeholder="{{__('Дата посещения')}}" name="date_time" value="{{$application->date_time}}" required>
+                                    <div class="form-group col-6 row justify-content-between">
+                                        <div class="col-6">
+                                            <label>{{__('Дата посещения')}}</label>
+                                            <input type="date" class="form-control" placeholder="{{__('Дата посещения')}}" name="date" min="{{date("Y-m-d")}}" max="{{date("Y-m-d", strtotime('+ 7 days'))}}" value="{{$application->date_time}}" required>
+                                        </div>
+                                        <div class="col-6">
+                                            <label>{{__('Время посещения')}}</label>
+                                            <select class="form-control border-2 border-secondary" name="time">
+                                                @php $time=strtotime('today 09:00') @endphp
+                                                @for($i=0;$i<18;$i++)
+                                                    @php $time=strtotime('+ 30 minutes', $time) @endphp
+                                                    <option value="{{date('H:i', $time)}}">{{date('H:i', $time)}}</option>
+                                                @endfor
+                                            </select>
+                                        </div>
                                     </div>
 
                                     <div class="form-group col-6">

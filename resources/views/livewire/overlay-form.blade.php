@@ -27,8 +27,19 @@
                                     <input type="text" class="form-control border-2 border-secondary w-100 py-3 px-4 rounded-pill" placeholder="Кличка питомца" name="pet_name" required>
                                 </div>
 
-                                <div class="form-group col-6">
-                                    <input type="datetime-local" class="form-control border-2 border-secondary w-100 py-3 px-4 rounded-pill" name="date_time" required>
+                                <div class="form-group col-6 row justify-content-between">
+                                    <div class="col-6">
+                                        <input type="date" min="{{date("Y-m-d")}}" max="{{date("Y-m-d", strtotime('+ 7 days'))}}" class="form-control border-2 border-secondary w-100 py-3 px-4 rounded-pill" name="date" required>
+                                    </div>
+                                    <div class="col-6">
+                                        <select class="form-control border-2 border-secondary w-100 py-3 px-4 rounded-pill" name="time">
+                                            @php $time=strtotime('today 09:00') @endphp
+                                            @for($i=0;$i<18;$i++)
+                                                @php $time=strtotime('+ 30 minutes', $time) @endphp
+                                                <option value="{{date('H:i', $time)}}">{{date('H:i', $time)}}</option>
+                                            @endfor
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row mb-4">

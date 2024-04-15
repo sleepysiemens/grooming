@@ -13,8 +13,11 @@ class ApplicationService
         if($request->email==null)
         {
             $data=$request->all();
+            $data['date_time']=$data['date'].' '.$data['time'];
             unset($data['_token']);
             unset($data['email']);
+            unset($data['date']);
+            unset($data['time']);
             Application::create($data);
             return true;
         }
@@ -24,8 +27,11 @@ class ApplicationService
     public function approve_application($request,Application $application)
     {
         $data=$request->all();
+        $data['date_time']=$data['date'].' '.$data['time'];
         unset($data['_token']);
-        unset($data['_method']);
+        unset($data['email']);
+        unset($data['date']);
+        unset($data['time']);
 
         $old_visit=Visit::query()->where('application_id','=',$application->id)->first();
         if($old_visit!=null)
