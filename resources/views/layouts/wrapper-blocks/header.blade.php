@@ -15,6 +15,18 @@
                 <div class="d-flex m-3 me-0">
                     <livewire:HeaderFormBtn/>
                 </div>
+                @if(auth()->user() != null)
+                    <a class="ms-2" @if(auth()->user()->is_admin) href="{{route('admin.index')}}" @elseif(auth()->user()->is_master) href="{{route('master.index')}}" @endif>
+                        <span class="d-flex">
+                            <i class="fas fa-user-circle fa-2x mx-auto"></i>
+                        </span>
+                        <p class="m-0" style="font-size: 12px">Привет, {{auth()->user()->name}}</p>
+                    </a>
+                @else
+                    <a class="ms-2" href="{{route('login')}}">
+                        <i class="fas fa-sign-in-alt fa-2x"></i>
+                    </a>
+                @endif
             </div>
         </nav>
 

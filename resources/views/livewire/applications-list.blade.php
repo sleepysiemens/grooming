@@ -20,6 +20,7 @@
                             <th>{{__('Имя')}}</th>
                             <th>{{__('Телефон')}}</th>
                             <th>{{__('Дата и время')}}</th>
+                            <th>{{__('Услуга')}}</th>
                             <th>{{__('Подтверждено')}}</th>
                         </thead>
                         <tbody>
@@ -29,6 +30,7 @@
                                 <td>{{$application->name}}</td>
                                 <td>{{$application->phone}}</td>
                                 <td>{{$application->date_time}}</td>
+                                <td>{{$application->product}}</td>
                                 <td>
                                     <a href="{{route('admin.applications.edit',$application->id)}}">
                                         @if($application->is_approved) <i class="fas fa-check"></i> @else <i class="fas fa-times"></i> @endif

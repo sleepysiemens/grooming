@@ -20,6 +20,14 @@
                     <p>{{__('Расписание')}}</p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{route('main.index')}}" class="nav-link @yield('products')">
+                    <i class="fas fa-home"></i>
+                    <p>
+                        {{__('На главную')}}
+                    </p>
+                </a>
+            </li>
 
 
             <li class="nav-item mt-5">

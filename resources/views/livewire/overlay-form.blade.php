@@ -33,13 +33,22 @@
                                     </div>
                                     <div class="col-6">
                                         <select class="form-control border-2 border-secondary w-100 py-3 px-4 rounded-pill" name="time">
-                                            @php $time=strtotime('today 09:00') @endphp
-                                            @for($i=0;$i<18;$i++)
-                                                @php $time=strtotime('+ 30 minutes', $time) @endphp
+                                            @php $time=strtotime('today 08:00') @endphp
+                                            @for($i=0;$i<9;$i++)
+                                                @php $time=strtotime('+ 60 minutes', $time) @endphp
                                                 <option value="{{date('H:i', $time)}}">{{date('H:i', $time)}}</option>
                                             @endfor
                                         </select>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="form-group col-6">
+                                    <select type="tel" class="form-control border-2 border-secondary w-100 py-3 px-4 rounded-pill" name="product" required>
+                                        @foreach($products as $product)
+                                            <option value="{{$product->title}}">{{$product->title}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="row mb-4">

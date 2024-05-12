@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Products;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
@@ -15,6 +16,7 @@ class OverlayForm extends Component
     }
     public function render()
     {
-        return view('livewire.overlay-form');
+        $products = Products::all();
+        return view('livewire.overlay-form', compact('products'));
     }
 }

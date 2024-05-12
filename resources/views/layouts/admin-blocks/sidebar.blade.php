@@ -34,6 +34,14 @@
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{route('main.index')}}" class="nav-link @yield('products')">
+                    <i class="fas fa-home"></i>
+                    <p>
+                        {{__('На главную')}}
+                    </p>
+                </a>
+            </li>
             <li class="nav-header text-uppercase" style="border-top: 1px solid #4f5962">{{__('редактирование')}}</li>
             <li class="nav-item">
                 <a href="{{route('admin.products.index')}}" class="nav-link @yield('products')">

@@ -31,8 +31,21 @@
             <div class="col-lg-3 col-md-6">
                 <div class="footer-item">
                     <h4 class="text-light mb-3">{{__('Контакты')}}</h4>
-                    <p>Email: {{env('MAIL_FROM_ADDRESS')}}</p>
-                    <p>Phone: {{env('CONTACT_PHONE')}}</p>
+                    <p>Почта: {{env('MAIL_FROM_ADDRESS')}}</p>
+                    <p>Телефон: {{env('CONTACT_PHONE')}}</p>
+                    <p>Адрес: {{env('LOCATION_ADDRESS')}}</p>
+                    <p>Мы открыты: {{env('WE_ARE_OPEN')}}</p>
+                    <div class="row">
+                        <a class="col-auto" href="">
+                            <i class="fab fa-vk fa-2x"></i>
+                        </a>
+                        <a class="col-auto" href="">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                        <a class="col-auto" href="">
+                            <i class="fab fa-tiktok fa-2x"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

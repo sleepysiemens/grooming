@@ -34,6 +34,15 @@
                                     <input type="text" class="form-control" placeholder="{{__('Название')}}" name="pet_name" value="{{$application->pet_name}}" required>
                                 </div>
 
+                                <div class="form-group">
+                                    <label>{{__('Услуга')}}</label>
+                                    <select type="text" class="form-control" name="product" required>
+                                        @foreach($products as $product)
+                                            <option value="{{$product->title}}" @if($application->product == $product->title) selected @endif>{{$product->title}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
                                 <div class="row">
                                     <div class="form-group col-6 row justify-content-between">
                                         <div class="col-6">

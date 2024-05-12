@@ -6,6 +6,7 @@
                 <p>{{__('Клиент: ')}}{{$visit->client_name}}</p>
                 <p>{{__('Телефон: ')}}{{$visit->phone}}</p>
                 <p>{{__('Питомец: ')}}{{$visit->pet_name}}</p>
+                <p>{{__('Услуга: ')}}{{$visit->product}}</p>
             </div>
         </div>
     @endif

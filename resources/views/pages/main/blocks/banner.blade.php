@@ -48,6 +48,15 @@
                             </div>
                             <div class="row mb-4">
                                 <div class="form-group col-6">
+                                    <select type="tel" class="form-control border-2 border-secondary w-100 py-3 px-4 rounded-pill" name="product" required>
+                                        @foreach($products as $product)
+                                            <option value="{{$product->title}}">{{$product->title}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="form-group col-6">
                                     <button class="btn btn-light border-secondary rounded-pill w-100 py-3 px-4">
                                         {{__('Записаться')}}
                                     </button>

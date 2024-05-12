@@ -23,7 +23,7 @@ class Visit extends Component
                 ->where('visits.date_time','=', $this->time)
                 ->join('users','visits.master_id','=','users.id')
                 ->join('applications','visits.application_id','=','applications.id')
-                ->select('visits.*','users.name', 'applications.name as client_name', 'applications.phone', 'applications.pet_name')
+                ->select('visits.*','users.name', 'applications.name as client_name', 'applications.phone', 'applications.pet_name', 'applications.product')
                 ->first();
         }
         else

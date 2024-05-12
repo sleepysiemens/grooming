@@ -19,7 +19,8 @@ class ApplicationController extends Controller
     public function edit(Application $application)
     {
         $masters=User::query()->where('is_master',1)->get();
-        return view('admin.applications.edit', compact(['application', 'masters']));
+        $products = Products::all();
+        return view('admin.applications.edit', compact(['application', 'masters', 'products']));
     }
 
     public function update(Request $request, Application $application)

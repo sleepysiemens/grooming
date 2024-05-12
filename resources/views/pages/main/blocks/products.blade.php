@@ -1,5 +1,5 @@
 <section class="py-5 position-relative">
-    <span class="position-absolute mb-5" id="products" style="bottom: 115%;"></span>
+    <span class="position-absolute mb-5" id="products" style="bottom: 102%;"></span>
     <div class="container px-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-8 order-lg-1 mb-5 mb-lg-0">
